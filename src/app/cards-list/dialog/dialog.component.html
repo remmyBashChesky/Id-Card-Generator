@@ -1,0 +1,11 @@
+ 
+<div mat-dialog-content> 
+ <p> First Name: {{data.firstName}}</p>
+ <p> Last Name: {{data.lastName}}</p>
+ <p> Blood Group: {{hlp.bloodGroupHelpers(data.bloodGroup)}}</p>
+ <p> Age: {{data.age}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Close</button>
+  <button mat-button cdkFocusInitial>Ok</button>
+</div>

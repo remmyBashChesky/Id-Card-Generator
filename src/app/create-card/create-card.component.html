@@ -1,0 +1,41 @@
+<div class="create-form">
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <label>
+      First Name:
+      <input type="text" formControlName="firstName" required>
+    </label>
+
+    <label>
+      Last Name:
+      <input type="text" formControlName="lastName">
+    </label>
+
+    <label>
+      Age:
+      <input type="number" formControlName="age">
+    </label>
+    <label>
+      Blood Group:
+
+    </label>
+
+    <mat-form-field>
+      <mat-select formControlName="bloodGroup">
+        <mat-option *ngFor="let bloodgroup of bloodGroups" [value]="bloodgroup.value">
+          {{bloodgroup.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field> 
+
+      <label>
+        Location:
+        <input type="text" formControlName="location">
+      </label>
+ 
+
+    <button type="submit" [disabled]="!profileForm.valid">Create</button>
+  </form>
+  <div>
+      <card-preview  ></card-preview>
+  </div>
+</div>

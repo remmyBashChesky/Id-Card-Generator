@@ -1,0 +1,17 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+ 
+    
+        <label>
+          Email:
+          <input type="text" formControlName="email">
+        </label>
+        
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="loginForm.password.errors.required">Password is required</div>
+        </div>
+     
+    
+        <button type="submit" [disabled]="!loginForm.valid">Login</button>
+      </form>
